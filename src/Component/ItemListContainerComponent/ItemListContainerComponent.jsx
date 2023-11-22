@@ -1,14 +1,30 @@
-const ItemListContainerComponent = ({greeting}) => {
-    const greentingStyles = {
-        fontSize: '3rem',
-        fontwight: '700',
-        textAling: 'center',
-        color: 'palegoldenrod',
-    }
+import React from "react";
+import { Card } from "react-bootstrap";
+
+const ItemListContainerComponent = ({products}) => {
     return (
-        <div style={greentingStyles}>
-            {greeting}
-        </div>
+        <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          width: "100vw",
+          justifyContent: "space-around",
+        }}
+      >
+
+        {products.map((product) => {
+          return (
+            <Card key={product.id} 
+            style={{ width: "18rem", margin: 20, height: '500px'}}>
+                <Card.Img variant="top" src={product.thumbnail} />
+              <Card.Body>
+                <Card.Title>{product.title}</Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+              </Card.Body>
+            </Card>
+          );
+        })}
+      </div>
     )
 }
 

@@ -1,18 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBarComponent from './Component/NavBarComponent/NavBarComponent';
-import ItemListContainerComponent from './Component/ItemListContainerComponent/ItemListContainerComponent';
-
-
-
-
+import "./index.css"
+import MainRoutes from './routes/MainRouter';
 
 function App() {
-  
-
   return (
     <div>
-      <NavBarComponent />
-      <ItemListContainerComponent greeting='Bienvenidos al Himalaya!'/>
+      <MainRoutes/>
     </div>
   )
 }
